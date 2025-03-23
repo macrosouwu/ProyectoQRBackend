@@ -6,7 +6,11 @@ const app = express();
 const port = 3000;
 app.use(express.json());
 app.use(cors());
-
+app.use(cors({
+    origin: 'http://localhost:5500',  // Aquí pones el origen de tu frontend (puede ser otro puerto o dominio)
+    methods: ['GET', 'POST'],        // Métodos HTTP permitidos
+    allowedHeaders: ['Content-Type'] // Encabezados permitidos
+  }));
 
 
 // Definimos una ruta basica
