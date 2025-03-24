@@ -3,7 +3,9 @@ import { alumnoRoutes } from '../routes/alumnoRoutes.js';
 import cors from 'cors';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
+console.log(port);
+
 app.use(express.json());
 app.use(cors());
 app.use(cors({
