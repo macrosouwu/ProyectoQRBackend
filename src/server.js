@@ -16,6 +16,12 @@ app.use(cors({
 
 
 // Definimos una ruta basica
+app.use('/', (req, res) => {
+  res.json({
+    status: "api funcionando correctamente",
+    code: 200
+  })
+})
 
 app.use('/api', alumnoRoutes);
 
