@@ -4,7 +4,7 @@ import express from 'express'
 
 const { Client } = pkg;
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 dotenv.config();
 
 // Nos conectamos a la base POSTGRE
