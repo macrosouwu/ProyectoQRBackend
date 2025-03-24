@@ -16,19 +16,25 @@ app.use(cors({
 
 
 // Definimos una ruta basica
-app.use('/', (req, res) => {
+// Ruta base
+app.get('/', (req, res) => {
   res.json({
-    status: "api funcionando correctamente",
+    status: "API funcionando correctamente",
     code: 200
-  })
+  });
 });
 
-app.use('/api', (req, res) => {
+// Ruta para verificar que /api responde
+app.get('/api', (req, res) => {
   res.json({
-    status: "apuntando a /api correctamente",
+    status: "Apuntando a /api correctamente",
     code: 200
-  })
+  });
 });
+
+// Aquí deben ir las rutas de alumnos
+app.use('/api', alumnoRoutes);
+
 
 
 // Ahora si Iniciamos el servidor en el puerto definido
