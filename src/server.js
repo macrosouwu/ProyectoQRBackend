@@ -21,9 +21,14 @@ app.use('/', (req, res) => {
     status: "api funcionando correctamente",
     code: 200
   })
-})
+});
 
-app.use('/api', alumnoRoutes);
+app.use('/api', (req, res) => {
+  res.json({
+    status: "apuntando a /api correctamente",
+    code: 200
+  })
+});
 
 
 // Ahora si Iniciamos el servidor en el puerto definido
